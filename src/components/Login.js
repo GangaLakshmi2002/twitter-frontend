@@ -41,7 +41,7 @@ const Login = () => {
        } 
        else{
         try {
-            console.log("register")
+            console.log("register", USER_API_END_POINT)
             const res = await axios.post(`${USER_API_END_POINT}/register`, {
                 name, username, email, password
             },

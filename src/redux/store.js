@@ -26,6 +26,9 @@ const rootReducer = combineReducers({
 })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+// Redux Toolkit’s default middleware includes a serializableCheck to ensure that actions and state are serializable (i.e., can be converted into JSON format).
+//  However, some of the actions used by redux-persist (such as FLUSH, REHYDRATE, etc.) are not entirely serializable or necessary to check for this purpose.
+
 const store = configureStore({
     reducer:persistedReducer,
     middleware: (getDefaultMiddleware) =>
